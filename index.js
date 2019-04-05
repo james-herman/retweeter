@@ -7,11 +7,11 @@ var config = require('./config')
 // new Twit object
 var T = new Twit(config);
 
-// params for searching for tweets, in this case return 82 tweets with the hashtagged #steelydan
+// params for searching for tweets, in this case return 150 tweets with the hashtagged #steelydan
 var params = {
 	q: '%23steelydan',
 	result_type: 'recent',
-	count: 100
+	count: 150
 }
 
 // function to get tweets
@@ -27,8 +27,8 @@ getTheTweets();
 
 function gotData(err, data, response) {
 
-	// picking random tweet of the first 50 tweets returned
-	// although params query brings back 100 tweets, they're aren't always
+	// picking random tweet of the first 75 tweets returned
+	// although params query brings back 150 tweets, they're aren't always
 	// 100 complete tweets to due twitter filtering out retweets and
 	// incomplete data. It seems like at least 50% of the tweets are
 	// always good, so just picking from the first 50 returned
@@ -36,7 +36,7 @@ function gotData(err, data, response) {
 	// was close to the max result (like 94 of 100) it would be undefined
 	// and the bot would stop working
 
-	var randomtweet = Math.floor(Math.random() * 50);
+	var randomtweet = Math.floor(Math.random() * 75);
 	
 	// create empty object to hold returned tweet id_str 
 	 var toretweet = {
