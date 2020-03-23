@@ -62,19 +62,47 @@ function gotData(err, data, response) {
 	// if the tweet is by either bot there is a message in the console
 	// and in 20 seconds the function will run again, hopefully posting
 	
-	if (tweeterid == ('2470654214' || '122217337'|| '122219416')) {
-		console.log("oops its the wrong guy again, will try again");
+	// if (tweeterid == ('2470654214' || '122217337'|| '122219416' || '4066860798' || '4782149654' || '43627436')) {
+	// 	console.log("oops its the wrong guy again, will try again");
 		
 	
-		} else {
+	// 	} else {
 
-		// retweet tweet from search above 
-		// print returned data in console
-		T.post('statuses/retweet/:id', toretweet, function (err, data, response) {
-   		console.log(data);
-	 	});
-		console.log("Success, another quality Steely Dan tweet has posted!");
+	// 	// retweet tweet from search above 
+	// 	// print returned data in console
+	// 	T.post('statuses/retweet/:id', toretweet, function (err, data, response) {
+   	// 	console.log(data);
+	//  	});
+	// 	console.log("Success, another quality Steely Dan tweet has posted!");
 
+	// }
+
+	// Changing to switch/case method to block selected accounts from being retweeted
+
+	switch(tweeterid) {
+		case '2470654214':
+			console.log("oops its the wrong guy again, will try again");
+			break;
+		case '122217337':
+			console.log("oops its the wrong guy again, will try again");
+			break;
+		case '122219416':
+			console.log("oops its the wrong guy again, will try again");
+			break;
+		case '4066860798':
+			console.log("oops its the wrong guy again, will try again");
+			break;
+		case '4782149654':
+			console.log("oops its the wrong guy again, will try again");
+			break;
+		case '43627436':
+			console.log("oops its the wrong guy again, will try again");
+			break;
+		default:
+			T.post('statuses/retweet/:id', toretweet, function (err, data, response) {
+				console.log(data);
+			   	});
+			 	console.log("Success, another quality Steely Dan tweet has posted!")
 	}
 }
 
